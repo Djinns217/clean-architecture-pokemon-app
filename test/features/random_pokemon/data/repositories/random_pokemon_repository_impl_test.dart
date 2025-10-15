@@ -57,7 +57,7 @@ void main() {
     final tId = 1;
     final tRandomPokemonModel =
         RandomPokemonModel(id: tId, name: 'test pokemon');
-    final RandomPokemon tRandomPokemon = tRandomPokemonModel;
+    final Pokemon tRandomPokemon = tRandomPokemonModel;
     test('should check if the device is online', () async {
       //arrange
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
@@ -149,7 +149,7 @@ void main() {
   group('getRandomPokemon', () {
     final tRandomPokemonModel =
         RandomPokemonModel(id: 123, name: 'test pokemon');
-    final RandomPokemon tRandomPokemon = tRandomPokemonModel;
+    final Pokemon tRandomPokemon = tRandomPokemonModel;
     test('should check if the device is online', () async {
       //arrange
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);

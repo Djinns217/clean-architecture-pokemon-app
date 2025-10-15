@@ -59,7 +59,7 @@ class RandomPokemonBloc extends Bloc<RandomPokemonEvent, RandomPokemonState> {
     }
   }
 
-  void _eitherLoadedOrErrorState(Either<Failure, RandomPokemon> failureOrPokemon,
+  void _eitherLoadedOrErrorState(Either<Failure, Pokemon> failureOrPokemon,
       Emitter<RandomPokemonState> emit) {
     failureOrPokemon.fold(
       (failure) => emit(Error(message: _mapFailureToMessage(failure))),

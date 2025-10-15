@@ -21,7 +21,7 @@ void main() {
     usecase = GetRandomPokemonId(mockPokemonRandomRepository);
   });
 
-  final tPokemon = RandomPokemon(id: 1, name: 'test');
+  final tPokemon = Pokemon(id: 1, name: 'test');
 
   test('should get random pokemon id from the repository', () async {
     // arrange

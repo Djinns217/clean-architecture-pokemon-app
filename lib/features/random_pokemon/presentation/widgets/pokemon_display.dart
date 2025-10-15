@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart';
 
 class PokemonDisplay extends StatelessWidget {
-  final RandomPokemon pokemon;
+  final Pokemon pokemon;
   const PokemonDisplay({
     super.key,
     required this.pokemon,

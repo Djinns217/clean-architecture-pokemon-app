@@ -22,20 +22,20 @@ class RandomPokemonRepositoryImpl implements PokemonRandomRepository {
   });
 
   @override
-  Future<Either<Failure, RandomPokemon>> getConcretePokemonById(int id) async {
+  Future<Either<Failure, Pokemon>> getConcretePokemonById(int id) async {
     return await _getPokemon(() {
       return remoteDataSource.getConcretePokemonById(id);
     });
   }
 
   @override
-  Future<Either<Failure, RandomPokemon>> getRandomPokemonId() async {
+  Future<Either<Failure, Pokemon>> getRandomPokemonId() async {
     return await _getPokemon(() {
       return remoteDataSource.getRandomPokemonId();
     });
   }
 
-  Future<Either<Failure, RandomPokemon>> _getPokemon(
+  Future<Either<Failure, Pokemon>> _getPokemon(
     _ConcreteOrRandomChooser getConcreteOrRandom, 
   ) async {
     if (await networkInfo.isConnected) {

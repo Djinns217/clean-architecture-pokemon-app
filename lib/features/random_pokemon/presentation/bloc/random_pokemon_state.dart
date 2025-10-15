@@ -12,7 +12,7 @@ class Empty extends RandomPokemonState {}
 class Loading extends RandomPokemonState {}
 
 class Loaded extends RandomPokemonState {
-  final RandomPokemon pokemon;
+  final Pokemon pokemon;
 
   const Loaded({required this.pokemon});
 

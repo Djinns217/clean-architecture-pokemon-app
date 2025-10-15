@@ -21,7 +21,7 @@ void main() {
   });
 
   const tId = 1;
-  final tPokemon = RandomPokemon(id: 1, name: 'test');
+  final tPokemon = Pokemon(id: 1, name: 'test');
 
   test('should get random pokemon for the id from the repository', () async {
     // arrange

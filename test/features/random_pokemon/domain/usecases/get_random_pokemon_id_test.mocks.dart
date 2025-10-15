@@ -47,7 +47,7 @@ class MockPokemonRandomRepository extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.RandomPokemon>> getConcretePokemonById(
+  _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>> getConcretePokemonById(
           int? number) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -55,31 +55,31 @@ class MockPokemonRandomRepository extends _i1.Mock
           [number],
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.RandomPokemon>>.value(
-                _FakeEither_0<_i5.Failure, _i6.RandomPokemon>(
+            _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>.value(
+                _FakeEither_0<_i5.Failure, _i6.Pokemon>(
           this,
           Invocation.method(
             #getConcretePokemonById,
             [number],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.RandomPokemon>>);
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.RandomPokemon>> getRandomPokemonId() =>
+  _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>> getRandomPokemonId() =>
       (super.noSuchMethod(
         Invocation.method(
           #getRandomPokemonId,
           [],
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.RandomPokemon>>.value(
-                _FakeEither_0<_i5.Failure, _i6.RandomPokemon>(
+            _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>.value(
+                _FakeEither_0<_i5.Failure, _i6.Pokemon>(
           this,
           Invocation.method(
             #getRandomPokemonId,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.RandomPokemon>>);
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>);
 }

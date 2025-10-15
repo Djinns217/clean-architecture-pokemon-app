@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
-class RandomPokemon extends Equatable {
+class Pokemon extends Equatable {
   final int id;
   final String name;
 
-  const RandomPokemon({required this.id, required this.name});
+  const Pokemon({required this.id, required this.name});
 
 
 

@@ -1,6 +1,6 @@
 import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart';
 
-class RandomPokemonModel extends RandomPokemon {
+class RandomPokemonModel extends Pokemon {
   const RandomPokemonModel({required super.id, required super.name});
 
   factory RandomPokemonModel.fromJson(Map<String, dynamic> json) {

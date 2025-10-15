@@ -44,7 +44,7 @@ void main() {
   group('GetRandomPokemonForConcreteId', () {
     final tIdString = "1";
     final tIdParsed = 1;
-    final tPokemon = RandomPokemon(id: 1, name: "Test pokemon");
+    final tPokemon = Pokemon(id: 1, name: "Test pokemon");
 
     void setUpMockInputConverterSuccess() =>
         when(mockInputConverter.stringToUnsignedInteger(any))
@@ -138,7 +138,7 @@ void main() {
   });
 
   group('GetRandomPokemonForRandomId', () {
-    final tPokemon = RandomPokemon(id: 1, name: "Test pokemon");
+    final tPokemon = Pokemon(id: 1, name: "Test pokemon");
 
     blocTest<RandomPokemonBloc, RandomPokemonState>(
       'should get data from the concrete use case',

@@ -5,7 +5,7 @@ import 'package:trivia_app/core/usecases/usecase.dart';
 import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart';
 
-class GetRandomPokemonById implements UseCase<RandomPokemon, Params> {
+class GetRandomPokemonById implements UseCase<Pokemon, Params> {
   final PokemonRandomRepository repository;
 
   // api.com/pokemon/1
@@ -14,7 +14,7 @@ class GetRandomPokemonById implements UseCase<RandomPokemon, Params> {
   GetRandomPokemonById(this.repository);
 
   @override
-  Future<Either<Failure, RandomPokemon>> call(Params params) async {
+  Future<Either<Failure, Pokemon>> call(Params params) async {
     return await repository.getConcretePokemonById(params.id);
   }
 }

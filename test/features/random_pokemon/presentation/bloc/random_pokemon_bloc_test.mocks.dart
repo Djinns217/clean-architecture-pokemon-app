@@ -73,7 +73,7 @@ class MockGetRandomPokemonById extends _i1.Mock
       ) as _i2.PokemonRandomRepository);
 
   @override
-  _i5.Future<_i3.Either<_i6.Failure, _i7.RandomPokemon>> call(
+  _i5.Future<_i3.Either<_i6.Failure, _i7.Pokemon>> call(
           _i4.Params? params) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -81,15 +81,15 @@ class MockGetRandomPokemonById extends _i1.Mock
           [params],
         ),
         returnValue:
-            _i5.Future<_i3.Either<_i6.Failure, _i7.RandomPokemon>>.value(
-                _FakeEither_1<_i6.Failure, _i7.RandomPokemon>(
+            _i5.Future<_i3.Either<_i6.Failure, _i7.Pokemon>>.value(
+                _FakeEither_1<_i6.Failure, _i7.Pokemon>(
           this,
           Invocation.method(
             #call,
             [params],
           ),
         )),
-      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.RandomPokemon>>);
+      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.Pokemon>>);
 }
 
 /// A class which mocks [GetRandomPokemonId].
@@ -111,7 +111,7 @@ class MockGetRandomPokemonId extends _i1.Mock
       ) as _i2.PokemonRandomRepository);
 
   @override
-  _i5.Future<_i3.Either<_i6.Failure, _i7.RandomPokemon>> call(
+  _i5.Future<_i3.Either<_i6.Failure, _i7.Pokemon>> call(
           _i9.NoParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -119,15 +119,15 @@ class MockGetRandomPokemonId extends _i1.Mock
           [params],
         ),
         returnValue:
-            _i5.Future<_i3.Either<_i6.Failure, _i7.RandomPokemon>>.value(
-                _FakeEither_1<_i6.Failure, _i7.RandomPokemon>(
+            _i5.Future<_i3.Either<_i6.Failure, _i7.Pokemon>>.value(
+                _FakeEither_1<_i6.Failure, _i7.Pokemon>(
           this,
           Invocation.method(
             #call,
             [params],
           ),
         )),
-      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.RandomPokemon>>);
+      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.Pokemon>>);
 }
 
 /// A class which mocks [InputConverter].

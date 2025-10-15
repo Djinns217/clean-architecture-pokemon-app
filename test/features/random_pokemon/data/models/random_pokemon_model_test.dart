@@ -10,7 +10,7 @@ void main() {
   final tRandomPokemonModel = RandomPokemonModel(id: 1, name: "bulbasaur");
 
   test('should be a subclass of RandomPokemon entity', () async {
-    expect(tRandomPokemonModel, isA<RandomPokemon>());
+    expect(tRandomPokemonModel, isA<Pokemon>());
   });
 
   group('fromJson', () {

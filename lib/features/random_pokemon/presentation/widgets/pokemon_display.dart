@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart';
+import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 
 class PokemonDisplay extends StatelessWidget {
   final Pokemon pokemon;

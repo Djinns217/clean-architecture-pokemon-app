@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/failure.dart';
-import '../entities/random_pokemon.dart';
+import '../entities/pokemon.dart';
 
 abstract class PokemonRandomRepository {
   Future<Either<Failure, Pokemon>> getConcretePokemonById(int number);

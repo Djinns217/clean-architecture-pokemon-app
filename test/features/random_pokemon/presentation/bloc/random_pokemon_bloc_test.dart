@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:trivia_app/core/error/failure.dart';
 import 'package:trivia_app/core/usecases/usecase.dart';
 import 'package:trivia_app/core/util/input_converter.dart';
-import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart';
+import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_by_id.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
 import 'package:trivia_app/features/random_pokemon/presentation/bloc/random_pokemon_bloc.dart';

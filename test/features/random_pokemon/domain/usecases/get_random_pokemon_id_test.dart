@@ -4,7 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
 import 'package:trivia_app/core/usecases/usecase.dart';
 
-import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart';
+import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
 

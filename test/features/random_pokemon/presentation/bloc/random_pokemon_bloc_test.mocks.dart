@@ -10,7 +10,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:trivia_app/core/error/failure.dart' as _i6;
 import 'package:trivia_app/core/usecases/usecase.dart' as _i9;
 import 'package:trivia_app/core/util/input_converter.dart' as _i10;
-import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart'
+import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
     as _i7;
 import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart'
     as _i2;

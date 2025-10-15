@@ -9,7 +9,7 @@ import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokem
 import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_remote_data_source.dart';
 import 'package:trivia_app/features/random_pokemon/data/models/random_pokemon_model.dart';
 import 'package:trivia_app/features/random_pokemon/data/repositories/random_pokemon_repository_impl.dart';
-import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart';
+import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 
 // 👇 Cette ligne dit à Mockito de générer le fichier de mocks
 /// flutter pub run build_runner build --delete-conflicting-outputs

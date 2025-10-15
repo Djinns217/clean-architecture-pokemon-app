@@ -8,7 +8,7 @@ import 'dart:async' as _i4;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:trivia_app/core/error/failure.dart' as _i5;
-import 'package:trivia_app/features/random_pokemon/domain/entities/random_pokemon.dart'
+import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
     as _i6;
 import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart'
     as _i3;

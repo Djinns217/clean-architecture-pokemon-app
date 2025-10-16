@@ -87,7 +87,7 @@ class MockRandomPokemonRemoteDataSource extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockRandomPokemonLocalDataSource extends _i1.Mock
-    implements _i5.RandomPokemonLocalDataSource {
+    implements _i5.PokemonLocalDataSource {
   MockRandomPokemonLocalDataSource() {
     _i1.throwOnMissingStub(this);
   }

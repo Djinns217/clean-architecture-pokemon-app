@@ -14,7 +14,7 @@ import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
 // 👇 Cette ligne dit à Mockito de générer le fichier de mocks
 /// flutter pub run build_runner build --delete-conflicting-outputs
 @GenerateMocks([RandomPokemonRemoteDataSource])
-@GenerateMocks([RandomPokemonLocalDataSource])
+@GenerateMocks([PokemonLocalDataSource])
 @GenerateMocks([NetworkInfo])
 import 'random_pokemon_repository_impl_test.mocks.dart';
 

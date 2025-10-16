@@ -13,12 +13,12 @@ import '../../../../fixtures/fixture_reader.dart';
 import 'random_pokemon_local_data_source_test.mocks.dart';
 
 void main() {
-  late RandomPokemonLocalDataSourceImpl dataSource;
+  late PokemonLocalDataSourceImpl dataSource;
   late MockSharedPreferences mockSharedPreferences;
 
   setUp(() {
     mockSharedPreferences = MockSharedPreferences();
-    dataSource = RandomPokemonLocalDataSourceImpl(
+    dataSource = PokemonLocalDataSourceImpl(
       sharedPreferences: mockSharedPreferences,
     );
   });

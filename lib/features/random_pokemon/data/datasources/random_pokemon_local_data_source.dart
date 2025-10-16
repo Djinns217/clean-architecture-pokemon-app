@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:trivia_app/core/error/exceptions.dart';
 import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
 
-abstract class RandomPokemonLocalDataSource {
+abstract class PokemonLocalDataSource {
   /// Gets the cached [PokemonModel] which was gotten the last time
   /// the user had an internet connection.
   ///
@@ -17,10 +17,10 @@ abstract class RandomPokemonLocalDataSource {
 // ignore: constant_identifier_names
 const CACHED_RANDOM_POKEMON = 'CACHED_RANDOM_POKEMON';
 
-class RandomPokemonLocalDataSourceImpl implements RandomPokemonLocalDataSource {
+class PokemonLocalDataSourceImpl implements PokemonLocalDataSource {
   final SharedPreferences sharedPreferences;
 
-  RandomPokemonLocalDataSourceImpl({required this.sharedPreferences});
+  PokemonLocalDataSourceImpl({required this.sharedPreferences});
 
   @override
   Future<PokemonModel> getLastRandomPokemon() {

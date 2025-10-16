@@ -12,7 +12,7 @@ typedef Future<PokemonModel> _ConcreteOrRandomChooser();
 
 class PokemonRepositoryImpl implements PokemonRepository {
   final RandomPokemonRemoteDataSource remoteDataSource;
-  final RandomPokemonLocalDataSource localDataSource;
+  final PokemonLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
 
   PokemonRepositoryImpl({

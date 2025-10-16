@@ -11,7 +11,7 @@ import '../../domain/repositories/pokemon_repository.dart';
 typedef Future<PokemonModel> _ConcreteOrRandomChooser();
 
 class PokemonRepositoryImpl implements PokemonRepository {
-  final RandomPokemonRemoteDataSource remoteDataSource;
+  final PokemonRemoteDataSource remoteDataSource;
   final PokemonLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
 

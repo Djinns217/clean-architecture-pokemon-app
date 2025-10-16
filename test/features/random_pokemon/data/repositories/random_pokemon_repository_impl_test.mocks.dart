@@ -43,7 +43,7 @@ class _FakeRandomPokemonModel_0 extends _i1.SmartFake
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockRandomPokemonRemoteDataSource extends _i1.Mock
-    implements _i3.RandomPokemonRemoteDataSource {
+    implements _i3.PokemonRemoteDataSource {
   MockRandomPokemonRemoteDataSource() {
     _i1.throwOnMissingStub(this);
   }

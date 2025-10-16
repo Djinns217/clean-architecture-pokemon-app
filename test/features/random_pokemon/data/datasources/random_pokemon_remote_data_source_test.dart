@@ -12,12 +12,12 @@ import '../../../../fixtures/fixture_reader.dart';
 import 'random_pokemon_remote_data_source_test.mocks.dart';
 
 void main() {
-  late RandomPokemonRemoteDataSourceImpl? dataSource;
+  late PokemonRemoteDataSourceImpl? dataSource;
   late MockClient mockHttpClient;
 
   setUp((){
     mockHttpClient = MockClient();
-    dataSource = RandomPokemonRemoteDataSourceImpl(client: mockHttpClient);
+    dataSource = PokemonRemoteDataSourceImpl(client: mockHttpClient);
   });
 
   void setUpMockHttpClientSuccess200(){

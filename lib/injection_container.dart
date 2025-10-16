@@ -37,8 +37,8 @@ Future<void> init() async {
           ));
 
   // Data sources
-  sl.registerLazySingleton<RandomPokemonRemoteDataSource>(
-      () => RandomPokemonRemoteDataSourceImpl(
+  sl.registerLazySingleton<PokemonRemoteDataSource>(
+      () => PokemonRemoteDataSourceImpl(
             client: sl(),
           ));
   sl.registerLazySingleton<PokemonLocalDataSource>(

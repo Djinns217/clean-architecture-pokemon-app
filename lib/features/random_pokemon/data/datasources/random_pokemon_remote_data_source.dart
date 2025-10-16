@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:trivia_app/core/error/exceptions.dart';
 import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
 
-abstract class RandomPokemonRemoteDataSource {
+abstract class PokemonRemoteDataSource {
   /// Calls the https://pokeapi.co/api/v2/pokemon/{id} endpoint.
   /// Throws a [ServerException] for all error codes.
   Future<PokemonModel> getConcretePokemonById(int number);
@@ -14,11 +14,11 @@ abstract class RandomPokemonRemoteDataSource {
   Future<PokemonModel> getRandomPokemonId();
 }
 
-class RandomPokemonRemoteDataSourceImpl
-    implements RandomPokemonRemoteDataSource {
+class PokemonRemoteDataSourceImpl
+    implements PokemonRemoteDataSource {
   final http.Client client;
 
-  RandomPokemonRemoteDataSourceImpl({required this.client});
+  PokemonRemoteDataSourceImpl({required this.client});
 
   @override
   Future<PokemonModel> getConcretePokemonById(int number) async {

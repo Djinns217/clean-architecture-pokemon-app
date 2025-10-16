@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_app/features/random_pokemon/presentation/pages/random_pokemon_page.dart';
+import 'package:trivia_app/features/random_pokemon/presentation/pages/pokemon_page.dart';
 import 'package:trivia_app/injection_container.dart' as di;
 
 void main() async {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.green.shade800,
         hintColor: Colors.green.shade600,
       ),
-      home: const RandomPokemonPage()
+      home: const PokemonPage()
     );
   }
 }

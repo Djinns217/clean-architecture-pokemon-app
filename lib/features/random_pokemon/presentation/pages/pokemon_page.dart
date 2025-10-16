@@ -5,8 +5,8 @@ import 'package:trivia_app/injection_container.dart';
 
 import '../widgets/widgets.dart';
 
-class RandomPokemonPage extends StatelessWidget {
-  const RandomPokemonPage({super.key});
+class PokemonPage extends StatelessWidget {
+  const PokemonPage({super.key});
 
   @override
   Widget build(BuildContext context) {

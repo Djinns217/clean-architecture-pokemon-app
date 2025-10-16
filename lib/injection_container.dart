@@ -6,7 +6,7 @@ import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokem
 import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_remote_data_source.dart';
 import 'package:trivia_app/features/random_pokemon/data/repositories/random_pokemon_repository_impl.dart';
 import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart';
-import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_by_id.dart';
+import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_pokemon_by_id.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
 import 'package:trivia_app/features/random_pokemon/presentation/bloc/random_pokemon_bloc.dart';
 import 'package:http/http.dart' as http;

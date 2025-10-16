@@ -14,7 +14,7 @@ import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
     as _i7;
 import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart'
     as _i2;
-import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_by_id.dart'
+import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_pokemon_by_id.dart'
     as _i4;
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart'
     as _i8;

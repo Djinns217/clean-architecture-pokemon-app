@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart';
-import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_by_id.dart';
+import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_pokemon_by_id.dart';
 
 // 👇 Cette ligne dit à Mockito de générer le fichier de mocks
 @GenerateMocks([PokemonRepository])

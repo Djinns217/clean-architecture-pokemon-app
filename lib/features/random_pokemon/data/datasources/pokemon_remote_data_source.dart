@@ -11,7 +11,7 @@ abstract class PokemonRemoteDataSource {
 
   /// Calls the https://pokeapi.co/api/v2/pokemon/random_id endpoint with a random id.
   /// Throws a [ServerException] for all error codes.
-  Future<PokemonModel> getRandomPokemonId();
+  Future<PokemonModel> getRandomPokemonId(int randomnumber);
 }
 
 class PokemonRemoteDataSourceImpl
@@ -26,8 +26,8 @@ class PokemonRemoteDataSourceImpl
   }
 
   @override
-  Future<PokemonModel> getRandomPokemonId() {
-    return _getPokemonfromUrl('https://pokeapi.co/api/v2/pokemon/random');
+  Future<PokemonModel> getRandomPokemonId(int randomnumber) {
+    return _getPokemonfromUrl('https://pokeapi.co/api/v2/pokemon/$randomnumber');
   }
 
   Future<PokemonModel> _getPokemonfromUrl(String url) async {

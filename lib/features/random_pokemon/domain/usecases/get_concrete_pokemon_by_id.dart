@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
 import 'package:trivia_app/core/error/failure.dart';
 import 'package:trivia_app/core/usecases/usecase.dart';
+import 'package:trivia_app/core/util/params.dart';
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/repositories/pokemon_repository.dart';
 
@@ -19,11 +19,4 @@ class GetConcretePokemonById implements UseCase<Pokemon, Params> {
   }
 }
 
-class Params extends Equatable {
-  final int id;
 
-  const Params({required this.id});
-  
-  @override
-  List<Object?> get props => [id];
-}

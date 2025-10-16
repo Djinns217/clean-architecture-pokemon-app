@@ -2,7 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
-import 'package:trivia_app/core/usecases/usecase.dart';
+import 'package:trivia_app/core/util/params.dart';
+import 'package:trivia_app/core/util/random_number_generator.dart';
 
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/repositories/pokemon_repository.dart';
@@ -14,26 +15,28 @@ import 'get_random_pokemon_id_test.mocks.dart';
 
 void main() {
   late GetRandomPokemonId usecase;
-  late MockPokemonRandomRepository mockPokemonRandomRepository;
+  late MockPokemonRepository mockPokemonRepository;
 
   setUp(() {
-    mockPokemonRandomRepository = MockPokemonRandomRepository();
-    usecase = GetRandomPokemonId(mockPokemonRandomRepository);
+    mockPokemonRepository = MockPokemonRepository();
+    usecase = GetRandomPokemonId(mockPokemonRepository);
   });
 
-  final tPokemon = Pokemon(id: 1, name: 'test');
+  
+  final randomId = RandomNumberGenerator().generate();
+
+  final tPokemon = Pokemon(id: randomId, name: 'test');
 
   test('should get random pokemon id from the repository', () async {
     // arrange
-    when(mockPokemonRandomRepository.getRandomPokemonId())
+    when(mockPokemonRepository.getRandomPokemonId(randomId))
         .thenAnswer((_) async => Right(tPokemon));
-
     // act
-    final result = await usecase(NoParams());
+    final result = await usecase(Params(id: randomId));
 
     // assert
     expect(result, Right(tPokemon));
-    verify(mockPokemonRandomRepository.getRandomPokemonId());
-    verifyNoMoreInteractions(mockPokemonRandomRepository);
+    verify(mockPokemonRepository.getRandomPokemonId(randomId));
+    verifyNoMoreInteractions(mockPokemonRepository);
   });
 }

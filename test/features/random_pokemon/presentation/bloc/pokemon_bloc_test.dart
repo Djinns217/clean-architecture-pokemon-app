@@ -4,30 +4,30 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
 import 'package:trivia_app/core/error/failure.dart';
-import 'package:trivia_app/core/usecases/usecase.dart';
 import 'package:trivia_app/core/util/input_converter.dart';
+import 'package:trivia_app/core/util/params.dart';
+import 'package:trivia_app/core/util/random_number_generator.dart';
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_pokemon_by_id.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
 import 'package:trivia_app/features/random_pokemon/presentation/bloc/pokemon_bloc.dart';
 
-@GenerateMocks([GetConcretePokemonById, GetRandomPokemonId])
-@GenerateMocks([InputConverter])
-import 'random_pokemon_bloc_test.mocks.dart';
+@GenerateMocks([GetConcretePokemonById, GetRandomPokemonId, InputConverter])
+import 'pokemon_bloc_test.mocks.dart';
 
 void main() {
   late PokemonBloc bloc;
-  late MockGetRandomPokemonById mockGetRandomPokemonById;
+  late MockGetConcretePokemonById mockGetConcretePokemonById;
   late MockGetRandomPokemonId mockGetRandomPokemonId;
   late MockInputConverter mockInputConverter;
 
   setUp(() {
-    mockGetRandomPokemonById = MockGetRandomPokemonById();
+    mockGetConcretePokemonById = MockGetConcretePokemonById();
     mockGetRandomPokemonId = MockGetRandomPokemonId();
     mockInputConverter = MockInputConverter();
 
     bloc = PokemonBloc(
-      concrete: mockGetRandomPokemonById,
+      concrete: mockGetConcretePokemonById,
       random: mockGetRandomPokemonId,
       inputConverter: mockInputConverter,
     );
@@ -54,7 +54,7 @@ void main() {
       'should call the InputConverter to validate and convert the string to an unsigned integer',
       build: () {
         setUpMockInputConverterSuccess();
-        when(mockGetRandomPokemonById.call(any))
+        when(mockGetConcretePokemonById.call(any))
             .thenAnswer((_) async => Right(tPokemon));
         return bloc;
       },
@@ -81,13 +81,13 @@ void main() {
       'should get data from the concrete use case',
       build: () {
         setUpMockInputConverterSuccess();
-        when(mockGetRandomPokemonById(any))
+        when(mockGetConcretePokemonById(any))
             .thenAnswer((_) async => Right(tPokemon));
         return bloc;
       },
       act: (bloc) => bloc.add(GetConcretePokemonByIdEvent(tIdString)),
       verify: (_) {
-        verify(mockGetRandomPokemonById(Params(id: tIdParsed)));
+        verify(mockGetConcretePokemonById(Params(id: tIdParsed)));
       },
     );
 
@@ -95,7 +95,7 @@ void main() {
       'should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
         setUpMockInputConverterSuccess();
-        when(mockGetRandomPokemonById(any))
+        when(mockGetConcretePokemonById(any))
             .thenAnswer((_) async => Right(tPokemon));
         return bloc;
       },
@@ -110,7 +110,7 @@ void main() {
       'should emit [Loading, Error] when getting data fails',
       build: () {
         setUpMockInputConverterSuccess();
-        when(mockGetRandomPokemonById(any))
+        when(mockGetConcretePokemonById(any))
             .thenAnswer((_) async => Left(ServerFailure()));
         return bloc;
       },
@@ -125,7 +125,7 @@ void main() {
       'should emit [Loading, Error] with a proper message for the error when getting data fails',
       build: () {
         setUpMockInputConverterSuccess();
-        when(mockGetRandomPokemonById(any))
+        when(mockGetConcretePokemonById(any))
             .thenAnswer((_) async => Left(CacheFailure()));
         return bloc;
       },
@@ -138,7 +138,8 @@ void main() {
   });
 
   group('GetRandomPokemonForRandomId', () {
-    final tPokemon = Pokemon(id: 1, name: "Test pokemon");
+    final randomId = RandomNumberGenerator().generate();
+    final tPokemon = Pokemon(id: randomId, name: "Test pokemon");
 
     blocTest<PokemonBloc, PokemonState>(
       'should get data from the concrete use case',
@@ -149,7 +150,7 @@ void main() {
       },
       act: (bloc) => bloc.add(GetRandomPokemonIdEvent()),
       verify: (_) {
-        verify(mockGetRandomPokemonId.call(NoParams()));
+        verify(mockGetRandomPokemonId.call(Params(id: randomId)));
       },
     );
 

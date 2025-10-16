@@ -29,9 +29,9 @@ class PokemonRepositoryImpl implements PokemonRepository {
   }
 
   @override
-  Future<Either<Failure, Pokemon>> getRandomPokemonId() async {
+  Future<Either<Failure, Pokemon>> getRandomPokemonId(int id) async {
     return await _getPokemon(() {
-      return remoteDataSource.getRandomPokemonId();
+      return remoteDataSource.getRandomPokemonId(id);
     });
   }
 

@@ -9,7 +9,7 @@ import 'dart:convert';
 
 import '../../../../fixtures/fixture_reader.dart';
 @GenerateMocks([http.Client])
-import 'random_pokemon_remote_data_source_test.mocks.dart';
+import 'pokemon_remote_data_source_test.mocks.dart';
 
 void main() {
   late PokemonRemoteDataSourceImpl? dataSource;
@@ -74,6 +74,7 @@ void main() {
 
   group('getRandomPokemonId',() {
     final tPokemonModel = PokemonModel.fromJson(json.decode(fixture('pokemon.json')));
+    final tPokemonModelId = tPokemonModel.id;
 
     test(
       '''should perform a GET request on a URL with number 
@@ -82,9 +83,9 @@ void main() {
         // arrange
         setUpMockHttpClientSuccess200();
         // act
-        dataSource!.getRandomPokemonId();
+        dataSource!.getRandomPokemonId(tPokemonModelId);
         // assert
-        verify(mockHttpClient.get(Uri.parse('https://pokeapi.co/api/v2/pokemon/random'), headers: {
+        verify(mockHttpClient.get(Uri.parse('https://pokeapi.co/api/v2/pokemon/$tPokemonModelId'), headers: {
           'Content-Type': 'application/json',
         }));
 
@@ -96,7 +97,7 @@ void main() {
         // arrange
         setUpMockHttpClientSuccess200();
         // act
-        final result = await dataSource!.getRandomPokemonId();
+        final result = await dataSource!.getRandomPokemonId(tPokemonModelId);
         // assert
         expect(result, equals(tPokemonModel));
       });
@@ -110,7 +111,7 @@ void main() {
         // act
         final call = dataSource!.getRandomPokemonId;
         // assert
-        expect(() => call(), throwsA(TypeMatcher<ServerException>()));
+        expect(() => call(tPokemonModelId), throwsA(TypeMatcher<ServerException>()));
       });
 
   });

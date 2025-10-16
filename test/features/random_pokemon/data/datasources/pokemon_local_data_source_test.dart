@@ -10,7 +10,7 @@ import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dar
 
 import '../../../../fixtures/fixture_reader.dart';
 @GenerateMocks([SharedPreferences])
-import 'random_pokemon_local_data_source_test.mocks.dart';
+import 'pokemon_local_data_source_test.mocks.dart';
 
 void main() {
   late PokemonLocalDataSourceImpl dataSource;

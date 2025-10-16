@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
+import 'package:trivia_app/core/util/params.dart';
 
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/repositories/pokemon_repository.dart';
@@ -9,15 +10,15 @@ import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_
 
 // 👇 Cette ligne dit à Mockito de générer le fichier de mocks
 @GenerateMocks([PokemonRepository])
-import 'get_random_pokemon_by_id_test.mocks.dart';
+import 'get_concrete_pokemon_by_id_test.mocks.dart';
 
 void main() {
   late GetConcretePokemonById usecase;
-  late MockPokemonRandomRepository mockPokemonRandomRepository;
+  late MockPokemonRepository mockPokemonRepository;
 
   setUp(() {
-    mockPokemonRandomRepository = MockPokemonRandomRepository();
-    usecase = GetConcretePokemonById(mockPokemonRandomRepository);
+    mockPokemonRepository = MockPokemonRepository();
+    usecase = GetConcretePokemonById(mockPokemonRepository);
   });
 
   const tId = 1;
@@ -25,7 +26,7 @@ void main() {
 
   test('should get random pokemon for the id from the repository', () async {
     // arrange
-    when(mockPokemonRandomRepository.getConcretePokemonById(any))
+    when(mockPokemonRepository.getConcretePokemonById(any))
         .thenAnswer((_) async => Right(tPokemon));
 
     // act
@@ -33,7 +34,7 @@ void main() {
 
     // assert
     expect(result, Right(tPokemon));
-    verify(mockPokemonRandomRepository.getConcretePokemonById(tId));
-    verifyNoMoreInteractions(mockPokemonRandomRepository);
+    verify(mockPokemonRepository.getConcretePokemonById(tId));
+    verifyNoMoreInteractions(mockPokemonRepository);
   });
 }

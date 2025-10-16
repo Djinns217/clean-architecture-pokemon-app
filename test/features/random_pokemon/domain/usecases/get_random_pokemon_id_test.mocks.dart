@@ -37,12 +37,11 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
-/// A class which mocks [PokemonRandomRepository].
+/// A class which mocks [PokemonRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockPokemonRandomRepository extends _i1.Mock
-    implements _i3.PokemonRepository {
-  MockPokemonRandomRepository() {
+class MockPokemonRepository extends _i1.Mock implements _i3.PokemonRepository {
+  MockPokemonRepository() {
     _i1.throwOnMissingStub(this);
   }
 
@@ -54,9 +53,8 @@ class MockPokemonRandomRepository extends _i1.Mock
           #getConcretePokemonById,
           [number],
         ),
-        returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>.value(
-                _FakeEither_0<_i5.Failure, _i6.Pokemon>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>.value(
+            _FakeEither_0<_i5.Failure, _i6.Pokemon>(
           this,
           Invocation.method(
             #getConcretePokemonById,
@@ -66,19 +64,19 @@ class MockPokemonRandomRepository extends _i1.Mock
       ) as _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>> getRandomPokemonId() =>
+  _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>> getRandomPokemonId(
+          int? randomNumber) =>
       (super.noSuchMethod(
         Invocation.method(
           #getRandomPokemonId,
-          [],
+          [randomNumber],
         ),
-        returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>.value(
-                _FakeEither_0<_i5.Failure, _i6.Pokemon>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>.value(
+            _FakeEither_0<_i5.Failure, _i6.Pokemon>(
           this,
           Invocation.method(
             #getRandomPokemonId,
-            [],
+            [randomNumber],
           ),
         )),
       ) as _i4.Future<_i2.Either<_i5.Failure, _i6.Pokemon>>);

@@ -5,5 +5,5 @@ import '../entities/pokemon.dart';
 
 abstract class PokemonRepository {
   Future<Either<Failure, Pokemon>> getConcretePokemonById(int number);
-  Future<Either<Failure, Pokemon>> getRandomPokemonId();
+  Future<Either<Failure, Pokemon>> getRandomPokemonId(int randomNumber);
 }

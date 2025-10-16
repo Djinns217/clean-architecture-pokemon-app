@@ -4,8 +4,9 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:trivia_app/core/error/failure.dart';
-import 'package:trivia_app/core/usecases/usecase.dart';
 import 'package:trivia_app/core/util/input_converter.dart';
+import 'package:trivia_app/core/util/params.dart';
+import 'package:trivia_app/core/util/random_number_generator.dart';
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_pokemon_by_id.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
@@ -54,7 +55,8 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
       );
     } else if (event is GetRandomPokemonIdEvent) {
       emit(Loading());
-      final failureOrPokemon = await getRandomPokemon(NoParams());
+      final randomId = RandomNumberGenerator().generate();
+      final failureOrPokemon = await getRandomPokemon(Params(id: randomId));
       _eitherLoadedOrErrorState(failureOrPokemon, emit);
     }
   }

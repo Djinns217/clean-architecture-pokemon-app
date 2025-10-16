@@ -1,19 +1,19 @@
 part of 'random_pokemon_bloc.dart';
 
-abstract class RandomPokemonEvent extends Equatable {
-  const RandomPokemonEvent();
+abstract class PokemonEvent extends Equatable {
+  const PokemonEvent();
 
   @override
   List<Object> get props => [];
 }
 
-class GetRandomPokemonForConcreteId extends RandomPokemonEvent {
+class GetConcretePokemonByIdEvent extends PokemonEvent {
   final String idString;
 
-  const GetRandomPokemonForConcreteId(this.idString);
+  const GetConcretePokemonByIdEvent(this.idString);
 
   @override
   List<Object> get props => [idString];
 }
 
-class GetRandomPokemonForRandomId extends RandomPokemonEvent {}
+class GetRandomPokemonIdEvent extends PokemonEvent {}

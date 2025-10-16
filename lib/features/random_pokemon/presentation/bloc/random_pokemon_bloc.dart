@@ -18,26 +18,26 @@ const String CACHE_FAILURE_MESSAGE = 'Cache Failure';
 const String INVALID_INPUT_FAILURE_MESSAGE =
     'Invalid Input - The number must be a positive integer or zero.';
 
-class RandomPokemonBloc extends Bloc<RandomPokemonEvent, RandomPokemonState> {
-  final GetConcretePokemonById getConcreteRandomPokemon;
+class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
+  final GetConcretePokemonById getConcretePokemon;
   final GetRandomPokemonId getRandomPokemon;
   final InputConverter inputConverter;
 
-  RandomPokemonBloc({
+  PokemonBloc({
     required GetConcretePokemonById concrete,
     required GetRandomPokemonId random,
     required this.inputConverter,
-  })  : getConcreteRandomPokemon = concrete,
+  })  : getConcretePokemon = concrete,
         getRandomPokemon = random,
         super(Empty()) {
-    on<RandomPokemonEvent>(_onRandomPokemonEvent);
+    on<PokemonEvent>(_onPokemonEvent);
   }
 
-  Future<void> _onRandomPokemonEvent(
-    RandomPokemonEvent event,
-    Emitter<RandomPokemonState> emit,
+  Future<void> _onPokemonEvent(
+    PokemonEvent event,
+    Emitter<PokemonState> emit,
   ) async {
-    if (event is GetRandomPokemonForConcreteId) {
+    if (event is GetConcretePokemonByIdEvent) {
       final inputEither =
           inputConverter.stringToUnsignedInteger(event.idString);
 
@@ -48,11 +48,11 @@ class RandomPokemonBloc extends Bloc<RandomPokemonEvent, RandomPokemonState> {
         (integer) async {
           emit(Loading());
           final failureOrPokemon =
-              await getConcreteRandomPokemon(Params(id: integer));
+              await getConcretePokemon(Params(id: integer));
           _eitherLoadedOrErrorState(failureOrPokemon, emit);
         },
       );
-    } else if (event is GetRandomPokemonForRandomId) {
+    } else if (event is GetRandomPokemonIdEvent) {
       emit(Loading());
       final failureOrPokemon = await getRandomPokemon(NoParams());
       _eitherLoadedOrErrorState(failureOrPokemon, emit);
@@ -60,7 +60,7 @@ class RandomPokemonBloc extends Bloc<RandomPokemonEvent, RandomPokemonState> {
   }
 
   void _eitherLoadedOrErrorState(Either<Failure, Pokemon> failureOrPokemon,
-      Emitter<RandomPokemonState> emit) {
+      Emitter<PokemonState> emit) {
     failureOrPokemon.fold(
       (failure) => emit(Error(message: _mapFailureToMessage(failure))),
       (pokemon) => emit(Loaded(pokemon: pokemon)),

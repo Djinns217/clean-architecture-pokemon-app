@@ -79,13 +79,13 @@ class _PokemonControlsState extends State<PokemonControls> {
 
   void addConcrete() {
     controller.clear();
-    BlocProvider.of<RandomPokemonBloc>(context)
-        .add(GetRandomPokemonForConcreteId(inputStr));
+    BlocProvider.of<PokemonBloc>(context)
+        .add(GetConcretePokemonByIdEvent(inputStr));
   }
 
   void addRandom() {
     controller.clear();
-    BlocProvider.of<RandomPokemonBloc>(context)
-        .add(GetRandomPokemonForRandomId());
+    BlocProvider.of<PokemonBloc>(context)
+        .add(GetRandomPokemonIdEvent());
   }
 }

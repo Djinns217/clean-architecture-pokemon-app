@@ -18,7 +18,7 @@ final sl = GetIt.instance;
 Future<void> init() async {
   //! Features - Random Pokemon
   // Bloc
-  sl.registerFactory(() => RandomPokemonBloc(
+  sl.registerFactory(() => PokemonBloc(
         concrete: sl(),
         random: sl(),
         inputConverter: sl(),

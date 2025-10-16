@@ -20,9 +20,9 @@ class RandomPokemonPage extends StatelessWidget {
     );
   }
 
-  BlocProvider<RandomPokemonBloc> buildBody(BuildContext context) {
+  BlocProvider<PokemonBloc> buildBody(BuildContext context) {
     return BlocProvider(
-      create: (_) => sl<RandomPokemonBloc>(),
+      create: (_) => sl<PokemonBloc>(),
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -30,7 +30,7 @@ class RandomPokemonPage extends StatelessWidget {
             children: <Widget>[
               SizedBox(height: 10),
               //Top Half
-              BlocBuilder<RandomPokemonBloc, RandomPokemonState>(
+              BlocBuilder<PokemonBloc, PokemonState>(
                 builder: (context, state) {
                   if (state is Empty) {
                     return MessageDisplay(message: 'Start searching!');

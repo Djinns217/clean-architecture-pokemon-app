@@ -1,6 +1,6 @@
 import 'dart:math';
 
-class RandomIdGenerator {
+class RandomNumberGenerator {
   final Random _random = Random();
 
   int generate() {

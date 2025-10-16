@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:trivia_app/features/random_pokemon/data/models/random_pokemon_model.dart';
+import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 
 import '../../../../fixtures/fixture_reader.dart';

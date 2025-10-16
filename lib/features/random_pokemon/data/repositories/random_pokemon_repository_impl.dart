@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:trivia_app/core/error/exceptions.dart';
-import 'package:trivia_app/features/random_pokemon/data/models/random_pokemon_model.dart';
+import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
 import '../../../../core/error/failure.dart';
 import '../../../../core/network/network_info.dart';
 import '../datasources/random_pokemon_local_data_source.dart';

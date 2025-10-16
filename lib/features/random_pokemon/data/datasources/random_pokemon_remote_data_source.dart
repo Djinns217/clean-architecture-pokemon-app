@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:trivia_app/core/error/exceptions.dart';
-import 'package:trivia_app/features/random_pokemon/data/models/random_pokemon_model.dart';
+import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
 
 abstract class RandomPokemonRemoteDataSource {
   /// Calls the https://pokeapi.co/api/v2/pokemon/{id} endpoint.

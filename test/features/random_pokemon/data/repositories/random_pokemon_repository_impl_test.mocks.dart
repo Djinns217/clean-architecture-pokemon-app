@@ -11,7 +11,7 @@ import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokem
     as _i5;
 import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_remote_data_source.dart'
     as _i3;
-import 'package:trivia_app/features/random_pokemon/data/models/random_pokemon_model.dart'
+import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart'
     as _i2;
 
 // ignore_for_file: type=lint

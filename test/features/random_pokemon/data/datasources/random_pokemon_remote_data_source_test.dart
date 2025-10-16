@@ -3,7 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:trivia_app/core/error/exceptions.dart';
 import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_remote_data_source.dart';
-import 'package:trivia_app/features/random_pokemon/data/models/random_pokemon_model.dart';
+import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

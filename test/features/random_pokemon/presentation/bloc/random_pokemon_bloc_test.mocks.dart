@@ -34,7 +34,7 @@ import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_po
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakePokemonRandomRepository_0 extends _i1.SmartFake
-    implements _i2.PokemonRandomRepository {
+    implements _i2.PokemonRepository {
   _FakePokemonRandomRepository_0(
     Object parent,
     Invocation parentInvocation,
@@ -64,13 +64,13 @@ class MockGetRandomPokemonById extends _i1.Mock
   }
 
   @override
-  _i2.PokemonRandomRepository get repository => (super.noSuchMethod(
+  _i2.PokemonRepository get repository => (super.noSuchMethod(
         Invocation.getter(#repository),
         returnValue: _FakePokemonRandomRepository_0(
           this,
           Invocation.getter(#repository),
         ),
-      ) as _i2.PokemonRandomRepository);
+      ) as _i2.PokemonRepository);
 
   @override
   _i5.Future<_i3.Either<_i6.Failure, _i7.Pokemon>> call(
@@ -102,13 +102,13 @@ class MockGetRandomPokemonId extends _i1.Mock
   }
 
   @override
-  _i2.PokemonRandomRepository get repository => (super.noSuchMethod(
+  _i2.PokemonRepository get repository => (super.noSuchMethod(
         Invocation.getter(#repository),
         returnValue: _FakePokemonRandomRepository_0(
           this,
           Invocation.getter(#repository),
         ),
-      ) as _i2.PokemonRandomRepository);
+      ) as _i2.PokemonRepository);
 
   @override
   _i5.Future<_i3.Either<_i6.Failure, _i7.Pokemon>> call(

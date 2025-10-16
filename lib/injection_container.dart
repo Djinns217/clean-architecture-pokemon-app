@@ -29,7 +29,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetRandomPokemonId(sl()));
 
   // Repository
-  sl.registerLazySingleton<PokemonRandomRepository>(
+  sl.registerLazySingleton<PokemonRepository>(
       () => RandomPokemonRepositoryImpl(
             localDataSource: sl(),
             remoteDataSource: sl(),

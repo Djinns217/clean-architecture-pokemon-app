@@ -9,7 +9,7 @@ import 'package:trivia_app/features/random_pokemon/domain/repositories/random_po
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
 
 // 👇 Cette ligne dit à Mockito de générer le fichier de mocks
-@GenerateMocks([PokemonRandomRepository])
+@GenerateMocks([PokemonRepository])
 import 'get_random_pokemon_id_test.mocks.dart';
 
 void main() {

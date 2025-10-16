@@ -5,7 +5,7 @@ import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
 import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart';
 
 class GetRandomPokemonId implements UseCase<Pokemon, NoParams> {
-  final PokemonRandomRepository repository;
+  final PokemonRepository repository;
 
   GetRandomPokemonId(this.repository);
 

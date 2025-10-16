@@ -8,7 +8,7 @@ import 'package:trivia_app/core/network/network_info.dart';
 import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_local_data_source.dart';
 import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_remote_data_source.dart';
 import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
-import 'package:trivia_app/features/random_pokemon/data/repositories/random_pokemon_repository_impl.dart';
+import 'package:trivia_app/features/random_pokemon/data/repositories/pokemon_repository_impl.dart';
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
 
 // 👇 Cette ligne dit à Mockito de générer le fichier de mocks

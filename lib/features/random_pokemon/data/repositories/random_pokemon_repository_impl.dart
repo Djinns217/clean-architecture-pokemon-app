@@ -6,7 +6,7 @@ import '../../../../core/network/network_info.dart';
 import '../datasources/random_pokemon_local_data_source.dart';
 import '../datasources/random_pokemon_remote_data_source.dart';
 import '../../domain/entities/pokemon.dart';
-import '../../domain/repositories/random_pokemon_repository.dart';
+import '../../domain/repositories/pokemon_repository.dart';
 
 typedef Future<PokemonModel> _ConcreteOrRandomChooser();
 

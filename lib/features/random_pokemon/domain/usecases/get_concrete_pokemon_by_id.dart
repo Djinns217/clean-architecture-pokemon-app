@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:trivia_app/core/error/failure.dart';
 import 'package:trivia_app/core/usecases/usecase.dart';
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart';
-import 'package:trivia_app/features/random_pokemon/domain/repositories/random_pokemon_repository.dart';
+import 'package:trivia_app/features/random_pokemon/domain/repositories/pokemon_repository.dart';
 
 class GetConcretePokemonById implements UseCase<Pokemon, Params> {
   final PokemonRepository repository;

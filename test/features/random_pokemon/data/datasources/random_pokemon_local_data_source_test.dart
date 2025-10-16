@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:trivia_app/core/error/exceptions.dart';
-import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_local_data_source.dart';
+import 'package:trivia_app/features/random_pokemon/data/datasources/pokemon_local_data_source.dart';
 import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
 
 import '../../../../fixtures/fixture_reader.dart';

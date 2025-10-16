@@ -3,7 +3,7 @@ import 'package:trivia_app/core/error/exceptions.dart';
 import 'package:trivia_app/features/random_pokemon/data/models/pokemon_model.dart';
 import '../../../../core/error/failure.dart';
 import '../../../../core/network/network_info.dart';
-import '../datasources/random_pokemon_local_data_source.dart';
+import '../datasources/pokemon_local_data_source.dart';
 import '../datasources/random_pokemon_remote_data_source.dart';
 import '../../domain/entities/pokemon.dart';
 import '../../domain/repositories/pokemon_repository.dart';

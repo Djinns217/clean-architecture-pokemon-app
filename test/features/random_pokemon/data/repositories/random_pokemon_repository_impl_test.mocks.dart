@@ -7,7 +7,7 @@ import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:trivia_app/core/network/network_info.dart' as _i6;
-import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_local_data_source.dart'
+import 'package:trivia_app/features/random_pokemon/data/datasources/pokemon_local_data_source.dart'
     as _i5;
 import 'package:trivia_app/features/random_pokemon/data/datasources/random_pokemon_remote_data_source.dart'
     as _i3;

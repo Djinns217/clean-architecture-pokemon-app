@@ -10,8 +10,8 @@ import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_pokemon_by_id.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
 
-part 'random_pokemon_event.dart';
-part 'random_pokemon_state.dart';
+part 'pokemon_event.dart';
+part 'pokemon_state.dart';
 
 const String SERVER_FAILURE_MESSAGE = 'Server Failure';
 const String CACHE_FAILURE_MESSAGE = 'Cache Failure';

@@ -8,7 +8,7 @@ import 'package:trivia_app/features/random_pokemon/data/repositories/pokemon_rep
 import 'package:trivia_app/features/random_pokemon/domain/repositories/pokemon_repository.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_pokemon_by_id.dart';
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
-import 'package:trivia_app/features/random_pokemon/presentation/bloc/random_pokemon_bloc.dart';
+import 'package:trivia_app/features/random_pokemon/presentation/bloc/pokemon_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 

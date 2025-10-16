@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:trivia_app/features/random_pokemon/presentation/bloc/random_pokemon_bloc.dart';
+import 'package:trivia_app/features/random_pokemon/presentation/bloc/pokemon_bloc.dart';
 import 'package:trivia_app/injection_container.dart';
 
 import '../widgets/widgets.dart';

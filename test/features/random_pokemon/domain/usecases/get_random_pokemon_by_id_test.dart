@@ -12,12 +12,12 @@ import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_po
 import 'get_random_pokemon_by_id_test.mocks.dart';
 
 void main() {
-  late GetRandomPokemonById usecase;
+  late GetConcretePokemonById usecase;
   late MockPokemonRandomRepository mockPokemonRandomRepository;
 
   setUp(() {
     mockPokemonRandomRepository = MockPokemonRandomRepository();
-    usecase = GetRandomPokemonById(mockPokemonRandomRepository);
+    usecase = GetConcretePokemonById(mockPokemonRandomRepository);
   });
 
   const tId = 1;

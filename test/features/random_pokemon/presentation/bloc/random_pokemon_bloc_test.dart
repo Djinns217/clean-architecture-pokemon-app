@@ -11,7 +11,7 @@ import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_po
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
 import 'package:trivia_app/features/random_pokemon/presentation/bloc/random_pokemon_bloc.dart';
 
-@GenerateMocks([GetRandomPokemonById, GetRandomPokemonId])
+@GenerateMocks([GetConcretePokemonById, GetRandomPokemonId])
 @GenerateMocks([InputConverter])
 import 'random_pokemon_bloc_test.mocks.dart';
 

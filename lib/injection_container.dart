@@ -25,7 +25,7 @@ Future<void> init() async {
       ));
 
   // Use cases
-  sl.registerLazySingleton(() => GetRandomPokemonById(sl()));
+  sl.registerLazySingleton(() => GetConcretePokemonById(sl()));
   sl.registerLazySingleton(() => GetRandomPokemonId(sl()));
 
   // Repository

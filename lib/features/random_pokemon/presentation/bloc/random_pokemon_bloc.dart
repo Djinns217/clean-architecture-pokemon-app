@@ -19,12 +19,12 @@ const String INVALID_INPUT_FAILURE_MESSAGE =
     'Invalid Input - The number must be a positive integer or zero.';
 
 class RandomPokemonBloc extends Bloc<RandomPokemonEvent, RandomPokemonState> {
-  final GetRandomPokemonById getConcreteRandomPokemon;
+  final GetConcretePokemonById getConcreteRandomPokemon;
   final GetRandomPokemonId getRandomPokemon;
   final InputConverter inputConverter;
 
   RandomPokemonBloc({
-    required GetRandomPokemonById concrete,
+    required GetConcretePokemonById concrete,
     required GetRandomPokemonId random,
     required this.inputConverter,
   })  : getConcreteRandomPokemon = concrete,

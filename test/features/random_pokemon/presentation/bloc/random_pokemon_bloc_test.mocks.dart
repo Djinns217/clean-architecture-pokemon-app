@@ -58,7 +58,7 @@ class _FakeEither_1<L, R> extends _i1.SmartFake implements _i3.Either<L, R> {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockGetRandomPokemonById extends _i1.Mock
-    implements _i4.GetRandomPokemonById {
+    implements _i4.GetConcretePokemonById {
   MockGetRandomPokemonById() {
     _i1.throwOnMissingStub(this);
   }

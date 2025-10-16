@@ -7,7 +7,7 @@ import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
 import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
-  final tRandomPokemonModel = RandomPokemonModel(id: 1, name: "bulbasaur");
+  final tRandomPokemonModel = PokemonModel(id: 1, name: "bulbasaur");
 
   test('should be a subclass of RandomPokemon entity', () async {
     expect(tRandomPokemonModel, isA<Pokemon>());
@@ -18,7 +18,7 @@ void main() {
       //arrange
       final Map<String, dynamic> jsonMap = json.decode(fixture( 'pokemon.json'));
       //act
-      final result = RandomPokemonModel.fromJson(jsonMap);
+      final result = PokemonModel.fromJson(jsonMap);
       //assert
       expect(result, tRandomPokemonModel);
   });

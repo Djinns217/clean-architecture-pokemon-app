@@ -30,7 +30,7 @@ void main() {
 
   group('getConcretePokemonById',() {
     final tId = 1;
-    final tPokemonModel = RandomPokemonModel.fromJson(json.decode(fixture('pokemon.json')));
+    final tPokemonModel = PokemonModel.fromJson(json.decode(fixture('pokemon.json')));
 
     test(
       '''should perform a GET request on a URL with number 
@@ -73,7 +73,7 @@ void main() {
   });
 
   group('getRandomPokemonId',() {
-    final tPokemonModel = RandomPokemonModel.fromJson(json.decode(fixture('pokemon.json')));
+    final tPokemonModel = PokemonModel.fromJson(json.decode(fixture('pokemon.json')));
 
     test(
       '''should perform a GET request on a URL with number 

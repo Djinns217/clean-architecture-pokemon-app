@@ -29,7 +29,7 @@ import 'package:trivia_app/features/random_pokemon/data/models/random_pokemon_mo
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeRandomPokemonModel_0 extends _i1.SmartFake
-    implements _i2.RandomPokemonModel {
+    implements _i2.PokemonModel {
   _FakeRandomPokemonModel_0(
     Object parent,
     Invocation parentInvocation,
@@ -49,38 +49,38 @@ class MockRandomPokemonRemoteDataSource extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.RandomPokemonModel> getConcretePokemonById(int? number) =>
+  _i4.Future<_i2.PokemonModel> getConcretePokemonById(int? number) =>
       (super.noSuchMethod(
         Invocation.method(
           #getConcretePokemonById,
           [number],
         ),
         returnValue:
-            _i4.Future<_i2.RandomPokemonModel>.value(_FakeRandomPokemonModel_0(
+            _i4.Future<_i2.PokemonModel>.value(_FakeRandomPokemonModel_0(
           this,
           Invocation.method(
             #getConcretePokemonById,
             [number],
           ),
         )),
-      ) as _i4.Future<_i2.RandomPokemonModel>);
+      ) as _i4.Future<_i2.PokemonModel>);
 
   @override
-  _i4.Future<_i2.RandomPokemonModel> getRandomPokemonId() =>
+  _i4.Future<_i2.PokemonModel> getRandomPokemonId() =>
       (super.noSuchMethod(
         Invocation.method(
           #getRandomPokemonId,
           [],
         ),
         returnValue:
-            _i4.Future<_i2.RandomPokemonModel>.value(_FakeRandomPokemonModel_0(
+            _i4.Future<_i2.PokemonModel>.value(_FakeRandomPokemonModel_0(
           this,
           Invocation.method(
             #getRandomPokemonId,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.RandomPokemonModel>);
+      ) as _i4.Future<_i2.PokemonModel>);
 }
 
 /// A class which mocks [RandomPokemonLocalDataSource].
@@ -93,24 +93,24 @@ class MockRandomPokemonLocalDataSource extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.RandomPokemonModel> getLastRandomPokemon() =>
+  _i4.Future<_i2.PokemonModel> getLastRandomPokemon() =>
       (super.noSuchMethod(
         Invocation.method(
           #getLastRandomPokemon,
           [],
         ),
         returnValue:
-            _i4.Future<_i2.RandomPokemonModel>.value(_FakeRandomPokemonModel_0(
+            _i4.Future<_i2.PokemonModel>.value(_FakeRandomPokemonModel_0(
           this,
           Invocation.method(
             #getLastRandomPokemon,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.RandomPokemonModel>);
+      ) as _i4.Future<_i2.PokemonModel>);
 
   @override
-  _i4.Future<void> cacheRandomPokemon(_i2.RandomPokemonModel? pokemonToCache) =>
+  _i4.Future<void> cacheRandomPokemon(_i2.PokemonModel? pokemonToCache) =>
       (super.noSuchMethod(
         Invocation.method(
           #cacheRandomPokemon,

@@ -7,11 +7,11 @@ import 'package:trivia_app/features/random_pokemon/data/models/random_pokemon_mo
 abstract class RandomPokemonRemoteDataSource {
   /// Calls the https://pokeapi.co/api/v2/pokemon/{id} endpoint.
   /// Throws a [ServerException] for all error codes.
-  Future<RandomPokemonModel> getConcretePokemonById(int number);
+  Future<PokemonModel> getConcretePokemonById(int number);
 
   /// Calls the https://pokeapi.co/api/v2/pokemon/random_id endpoint with a random id.
   /// Throws a [ServerException] for all error codes.
-  Future<RandomPokemonModel> getRandomPokemonId();
+  Future<PokemonModel> getRandomPokemonId();
 }
 
 class RandomPokemonRemoteDataSourceImpl
@@ -21,16 +21,16 @@ class RandomPokemonRemoteDataSourceImpl
   RandomPokemonRemoteDataSourceImpl({required this.client});
 
   @override
-  Future<RandomPokemonModel> getConcretePokemonById(int number) async {
+  Future<PokemonModel> getConcretePokemonById(int number) async {
     return _getPokemonfromUrl('https://pokeapi.co/api/v2/pokemon/$number');
   }
 
   @override
-  Future<RandomPokemonModel> getRandomPokemonId() {
+  Future<PokemonModel> getRandomPokemonId() {
     return _getPokemonfromUrl('https://pokeapi.co/api/v2/pokemon/random');
   }
 
-  Future<RandomPokemonModel> _getPokemonfromUrl(String url) async {
+  Future<PokemonModel> _getPokemonfromUrl(String url) async {
     final response = await client.get(
       Uri.parse(url),
       headers: {
@@ -39,7 +39,7 @@ class RandomPokemonRemoteDataSourceImpl
     );
 
     if (response.statusCode == 200) {
-      return RandomPokemonModel.fromJson(json.decode(response.body));
+      return PokemonModel.fromJson(json.decode(response.body));
     } else {
       throw ServerException();
     }

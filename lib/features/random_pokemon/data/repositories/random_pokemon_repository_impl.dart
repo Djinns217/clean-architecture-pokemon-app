@@ -8,7 +8,7 @@ import '../datasources/random_pokemon_remote_data_source.dart';
 import '../../domain/entities/pokemon.dart';
 import '../../domain/repositories/random_pokemon_repository.dart';
 
-typedef Future<RandomPokemonModel> _ConcreteOrRandomChooser();
+typedef Future<PokemonModel> _ConcreteOrRandomChooser();
 
 class RandomPokemonRepositoryImpl implements PokemonRandomRepository {
   final RandomPokemonRemoteDataSource remoteDataSource;

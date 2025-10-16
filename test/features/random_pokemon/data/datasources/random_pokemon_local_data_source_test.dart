@@ -24,7 +24,7 @@ void main() {
   });
 
   group('getLastRandomPokemon', () {
-    final tRandomPokemonModel = RandomPokemonModel.fromJson(
+    final tRandomPokemonModel = PokemonModel.fromJson(
       json.decode(fixture('pokemon_cached.json')),
     );
     test(
@@ -53,7 +53,7 @@ void main() {
 
   group('cachedRandomPokemon', () {
     final tRandomPokemonModel =
-        RandomPokemonModel(id: 1, name: "random pokemon test");
+        PokemonModel(id: 1, name: "random pokemon test");
     test('should call SharedPreferences to cache the data', () async {
       //arrange
       when(mockSharedPreferences.setString(any, any))

@@ -56,7 +56,7 @@ void main() {
   group('getConcreteRandomPokemon', () {
     final tId = 1;
     final tRandomPokemonModel =
-        RandomPokemonModel(id: tId, name: 'test pokemon');
+        PokemonModel(id: tId, name: 'test pokemon');
     final Pokemon tRandomPokemon = tRandomPokemonModel;
     test('should check if the device is online', () async {
       //arrange
@@ -64,7 +64,7 @@ void main() {
 
       // 👇 ajoute ceci pour éviter le MissingStubError
       when(mockRemoteDataSource.getConcretePokemonById(any))
-          .thenAnswer((_) async => RandomPokemonModel(id: 1, name: 'test'));
+          .thenAnswer((_) async => PokemonModel(id: 1, name: 'test'));
 
       //act
       repository.getConcretePokemonById(tId);
@@ -148,7 +148,7 @@ void main() {
 
   group('getRandomPokemon', () {
     final tRandomPokemonModel =
-        RandomPokemonModel(id: 123, name: 'test pokemon');
+        PokemonModel(id: 123, name: 'test pokemon');
     final Pokemon tRandomPokemon = tRandomPokemonModel;
     test('should check if the device is online', () async {
       //arrange
@@ -156,7 +156,7 @@ void main() {
 
       // 👇 ajoute ceci pour éviter le MissingStubError
       when(mockRemoteDataSource.getRandomPokemonId())
-          .thenAnswer((_) async => RandomPokemonModel(id: 1234, name: 'test'));
+          .thenAnswer((_) async => PokemonModel(id: 1234, name: 'test'));
 
       //act
       repository.getRandomPokemonId();

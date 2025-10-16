@@ -19,7 +19,7 @@ import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
 import 'random_pokemon_repository_impl_test.mocks.dart';
 
 void main() {
-  late RandomPokemonRepositoryImpl repository;
+  late PokemonRepositoryImpl repository;
   late MockRandomPokemonRemoteDataSource mockRemoteDataSource;
   late MockRandomPokemonLocalDataSource mockLocalDataSource;
   late MockNetworkInfo mockNetworkInfo;
@@ -28,7 +28,7 @@ void main() {
     mockRemoteDataSource = MockRandomPokemonRemoteDataSource();
     mockLocalDataSource = MockRandomPokemonLocalDataSource();
     mockNetworkInfo = MockNetworkInfo();
-    repository = RandomPokemonRepositoryImpl(
+    repository = PokemonRepositoryImpl(
       remoteDataSource: mockRemoteDataSource,
       localDataSource: mockLocalDataSource,
       networkInfo: mockNetworkInfo,

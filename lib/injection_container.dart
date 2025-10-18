@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:trivia_app/core/network/network_info.dart';
 import 'package:trivia_app/core/util/input_converter.dart';
+import 'package:trivia_app/core/util/random_number_generator.dart';
 import 'package:trivia_app/features/random_pokemon/data/datasources/pokemon_local_data_source.dart';
 import 'package:trivia_app/features/random_pokemon/data/datasources/pokemon_remote_data_source.dart';
 import 'package:trivia_app/features/random_pokemon/data/repositories/pokemon_repository_impl.dart';
@@ -50,6 +51,7 @@ Future<void> init() async {
   //! Core
   sl.registerLazySingleton(() => InputConverter());
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
+  sl.registerLazySingleton(() => RandomNumberGenerator());
 
   //! External
   final sharedPreferences = await SharedPreferences.getInstance();

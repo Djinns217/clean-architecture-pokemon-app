@@ -12,7 +12,7 @@ import 'package:trivia_app/features/random_pokemon/domain/usecases/get_concrete_
 import 'package:trivia_app/features/random_pokemon/domain/usecases/get_random_pokemon_id.dart';
 import 'package:trivia_app/features/random_pokemon/presentation/bloc/pokemon_bloc.dart';
 
-@GenerateMocks([GetConcretePokemonById, GetRandomPokemonId, InputConverter])
+@GenerateMocks([GetConcretePokemonById, GetRandomPokemonId, InputConverter, RandomNumberGenerator])
 import 'pokemon_bloc_test.mocks.dart';
 
 void main() {
@@ -20,16 +20,20 @@ void main() {
   late MockGetConcretePokemonById mockGetConcretePokemonById;
   late MockGetRandomPokemonId mockGetRandomPokemonId;
   late MockInputConverter mockInputConverter;
+  late MockRandomNumberGenerator mockRandomNumberGenerator;
 
   setUp(() {
     mockGetConcretePokemonById = MockGetConcretePokemonById();
     mockGetRandomPokemonId = MockGetRandomPokemonId();
     mockInputConverter = MockInputConverter();
+    mockRandomNumberGenerator = MockRandomNumberGenerator();
 
     bloc = PokemonBloc(
       concrete: mockGetConcretePokemonById,
       random: mockGetRandomPokemonId,
       inputConverter: mockInputConverter,
+      randomNumberGenerator: mockRandomNumberGenerator,
+
     );
   });
 
@@ -144,19 +148,21 @@ void main() {
     blocTest<PokemonBloc, PokemonState>(
       'should get data from the concrete use case',
       build: () {
+        when(mockRandomNumberGenerator.generate()).thenReturn(randomId);
         when(mockGetRandomPokemonId(any))
             .thenAnswer((_) async => Right(tPokemon));
         return bloc;
       },
       act: (bloc) => bloc.add(GetRandomPokemonIdEvent()),
       verify: (_) {
-        verify(mockGetRandomPokemonId.call(Params(id: randomId)));
+        verify(mockGetRandomPokemonId(Params(id: randomId))).called(1);
       },
     );
 
     blocTest<PokemonBloc, PokemonState>(
       'should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
+        when(mockRandomNumberGenerator.generate()).thenReturn(randomId);
         when(mockGetRandomPokemonId(any))
             .thenAnswer((_) async => Right(tPokemon));
         return bloc;
@@ -171,6 +177,7 @@ void main() {
     blocTest<PokemonBloc, PokemonState>(
       'should emit [Loading, Error] when getting data fails',
       build: () {
+        when(mockRandomNumberGenerator.generate()).thenReturn(randomId);
         when(mockGetRandomPokemonId(any))
             .thenAnswer((_) async => Left(ServerFailure()));
         return bloc;
@@ -185,6 +192,7 @@ void main() {
     blocTest<PokemonBloc, PokemonState>(
       'should emit [Loading, Error] with a proper message for the error when getting data fails',
       build: () {
+        when(mockRandomNumberGenerator.generate()).thenReturn(randomId);
         when(mockGetRandomPokemonId(any))
             .thenAnswer((_) async => Left(CacheFailure()));
         return bloc;

@@ -23,11 +23,13 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
   final GetConcretePokemonById getConcretePokemon;
   final GetRandomPokemonId getRandomPokemon;
   final InputConverter inputConverter;
+  final RandomNumberGenerator randomNumberGenerator;
 
   PokemonBloc({
     required GetConcretePokemonById concrete,
     required GetRandomPokemonId random,
     required this.inputConverter,
+    required this.randomNumberGenerator,
   })  : getConcretePokemon = concrete,
         getRandomPokemon = random,
         super(Empty()) {
@@ -55,7 +57,7 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
       );
     } else if (event is GetRandomPokemonIdEvent) {
       emit(Loading());
-      final randomId = RandomNumberGenerator().generate();
+      final randomId = randomNumberGenerator.generate();
       final failureOrPokemon = await getRandomPokemon(Params(id: randomId));
       _eitherLoadedOrErrorState(failureOrPokemon, emit);
     }

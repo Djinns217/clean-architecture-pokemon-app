@@ -10,6 +10,7 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:trivia_app/core/error/failure.dart' as _i6;
 import 'package:trivia_app/core/util/input_converter.dart' as _i10;
 import 'package:trivia_app/core/util/params.dart' as _i8;
+import 'package:trivia_app/core/util/random_number_generator.dart' as _i11;
 import 'package:trivia_app/features/random_pokemon/domain/entities/pokemon.dart'
     as _i7;
 import 'package:trivia_app/features/random_pokemon/domain/repositories/pokemon_repository.dart'
@@ -149,4 +150,23 @@ class MockInputConverter extends _i1.Mock implements _i10.InputConverter {
           ),
         ),
       ) as _i3.Either<_i6.Failure, int>);
+}
+
+/// A class which mocks [RandomNumberGenerator].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockRandomNumberGenerator extends _i1.Mock
+    implements _i11.RandomNumberGenerator {
+  MockRandomNumberGenerator() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  int generate() => (super.noSuchMethod(
+        Invocation.method(
+          #generate,
+          [],
+        ),
+        returnValue: 0,
+      ) as int);
 }

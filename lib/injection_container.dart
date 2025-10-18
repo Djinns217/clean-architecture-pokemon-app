@@ -22,6 +22,7 @@ Future<void> init() async {
         concrete: sl(),
         random: sl(),
         inputConverter: sl(),
+        randomNumberGenerator: sl(),
       ));
 
   // Use cases
